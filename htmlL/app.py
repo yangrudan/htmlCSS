@@ -11,14 +11,21 @@ from flask import *
 
 app=Flask(__name__)
 
-@app.route('/')      #设置根目录路由
-def hello():
-    return render_template('HeadFirstLounge.html')
-
-
-@app.route('/index',methods=['GET','POST'])    #获取表单（模板）并渲染
+@app.route('/')
 def index():
     return render_template('HeadFirstLounge.html')
+
+
+@app.route('/elixir')
+def elixir():
+    return render_template('elixir.html')
+
+
+@app.route('/direction')
+def direction():
+    return render_template('direction.html')
+
+
 
 
 if __name__ == '__main__':
