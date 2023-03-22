@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+# 填充网页名的block
+{% block title %}子模板网页名{% endblock %}
+
+# 填充样式的block
+{% block mycss %}
+<style>
+    #middle{
+        background-color: chocolate;
+    }
+    .div1 {
+        width: 33%;
+        height: 50px;
+        float: left;
+    }
+</style>
+{% endblock %}
+
+# 填充脚本的block
+{% block myjs %}
+<script>
+        btn=document.getElementById('btn')
+        btn.onclick=(function () {
+            alert('欢迎学习Flask框架')
+        })
+</script>
+{% endblock %}
+
+# 填充中间内容的的block
+{% block middle %}
+    <div class="div1" id="d1"></div>
+    <div class="div1"></div>
+    <div class="div1"></div>
+{% endblock %}

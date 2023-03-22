@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    # 预留编写网页名的block
+    <title>{% block title %}父模板的title{% endblock %}</title>
+<style>
+    #head{
+        height: 50px;
+        background-color: bisque;
+    }
+    #head ul{
+        list-style: none;
+    }
+    #head ul li{
+         float: left;
+        width: 100px;
+        text-align: center;
+        font-size: 18px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    #middle{
+        height: 500px;
+
+    }
+    #foot{
+        height: 50px;
+        line-height: 50px;
+        background-color: aqua;
+
+    }
+</style>
+# 预留编写样式css的block
+{% block mycss%}{% endblock %}
+</head>
+<body>
+    <div id="head">
+        <ul>
+            <li>首页</li>
+            <li>秒杀</li>
+            <li>超市</li>
+            <li>图书</li>
+            <li>会员</li>
+        </ul>
+    </div>
+
+    <div id="middle">
+    # 预留编写中间内容的block
+    {% block middle %}<button id="btn">我是中间部分</button>{% endblock %}
+    </div>
+
+    <div id="foot">我是底部内容</div>
+
+# 预留编写脚本的block
+{% block myjs %}{% endblock %}
+</body>
+</html>
