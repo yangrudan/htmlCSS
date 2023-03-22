@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宏的定义</title>
+</head>
+<body>
+{# 定义宏 #}
+{% macro input(value) %}
+    <input type="submit" placeholder="{{ value }}">
+{% endmacro %}
+
+{# 调用宏 #}
+{{ input('提交') }}
+</body>
+</html>
