@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 import sqlite3
-
+"""
+https://zhuanlan.zhihu.com/p/546663861
+"""
 app=Flask(__name__)
 
 
