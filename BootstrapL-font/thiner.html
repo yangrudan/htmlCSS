@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap example</title>
+    <meta name="viewport" content="width = device - width, initial - scale = 1">
+    <link rel = "stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"><</script>
+</head>
+<body>
+    <div class = "container mt -3">
+        <div class = "button-group w-100 mb -2">
+            <button type="button" class="btn btn-outline-dark"
+                    id = "myButton1">Show original text</button>
+            <button type="button" class="btn btn-outline-dark"
+                    id = "myButton2">Show thinner text</button>
+            <p> This is  an example</p>
+            <p id="p2" class="font-weight-light"> HTML5 +CSS3</p>
+            <p> Jquery example</p>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $("#myButton1").click(function(){
+                $("p2")[0].className = "font-weight-normal";
+            });
+            $("#myButton2").click(function(){
+                $("#p2")[0].className = "font-weight-light";
+            });});
+    </script>
+
+</body>
+</html>

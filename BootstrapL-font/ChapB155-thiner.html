@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Bootstrap 实例</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">-->
+<!-- <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>-->
+<!-- <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>-->
+<!-- <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>-->
+ <link rel="stylesheet" href="BootstrapJS/bootstrap.min.css">
+ <script src="BootstrapJS/jquery.min.js"></script>
+ <script src="BootstrapJS/popper.min.js"></script>
+ <script src="BootstrapJS/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container mt-3 ">
+ <div class="btn-group w-100 mb-2">
+  <button type="button" class="btn btn-outline-dark"
+          id="myButton1">显示原始文本</button>
+  <button type="button" class="btn btn-outline-dark"
+          id="myButton2">显示加细文本</button>
+ </div>
+ <p>Android炫酷应用300例 实战篇</p>
+ <p id="p2" class="font-weight-light">HTML5+CSS3炫酷应用实例集锦</p>
+ <p>jQuery炫酷应用实例集锦</p>
+</div>
+<script>
+ $(function () {
+  $("#myButton1").click(function () {		//响应单击按钮“显示原始文本”
+   $("#p2")[0].className = "font-weight-normal";
+  });
+  $("#myButton2").click(function () {		//响应单击按钮“显示加细文本”
+   $("#p2")[0].className = "font-weight-light";
+  });
+ });
+</script>
+</body>
+</html>
