@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Async</title>
+    <script src="{{url_for('static', filename='jquery-3.5.1.min.js')}}"></script>
+</head>
+<body>
+    <ul>
+        {% for k,v in user_list.items() %}
+            <li>{{k}}: {{v.name}} {{v.count}} </li>
+        {% endfor %}
+    </ul>
+    <script>
+        # 重点2秒重新请求
+        function reload() {
+            window.location.reload()
+        }
+        setInterval(reload,2000)
+
+    </script>
+
+    <form action="/get_sth" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="action" value="get_all">
+        <fieldset style="width:25%;float:left">
+            <legend> Q: </legend>
+            <textarea name="get_all">{{val}}</textarea>
+            <p><input type="submit" class="my_button" value="GET_VAL"></p>
+        </fieldset>
+    </form>
+
+<script type="text/javascript" src="static/jquery-3.5.1.min.js"></script>
+
+ <script type="text/javascript">
+     setInterval(
+         function(){
+             $.ajax({
+                 type: "POST",
+                 dataType: "json",
+                 url: "/m112",//后端请求url地址
+                 data: '11',//后端请求参数
+                 success: function (result) {
+                     console.log(result);
+                     {
+                         alert(result)
+                     }
+                 },
+                 error: function (result) {
+                     console.log(result);
+                     {
+                         alert(result);
+                     }
+                 }
+             })
+         }
+
+             , 5000); // 5秒后再次调用
+ </script>
+
+</body>
+</html>
