@@ -5,7 +5,7 @@ from flask_cors import CORS
 from flask import Flask, redirect, render_template
 
 app = Flask(__name__)
-# cors = CORS(app)
+cors = CORS(app)
 
 job = {}  # 任务状态
 
