@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Log Viewer</title>
+  <style>
+    #logContainer {
+      height: 300px;
+      overflow: auto;
+      background-color: #f2f2f2;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Log Viewer</h1>
+  <div id="logContainer"></div>
+
+  <script>
+    // Function to append a log entry to the log container
+    function appendLogEntry(logEntry) {
+      const logContainer = document.getElementById('logContainer');
+      const logEntryElement = document.createElement('p');
+      logEntryElement.textContent = logEntry;
+      logContainer.appendChild(logEntryElement);
+    }
+
+    // WebSocket connection to receive log messages
+    const socket = new WebSocket('ws://YOUR_WEBSOCKET_URL'); // Replace with your WebSocket URL
+
+    // Event handler for when a log message is received
+    socket.addEventListener('message', function (event) {
+      const logMessage = event.data;
+      appendLogEntry(logMessage);
+    });
+  </script>
+</body>
+</html>
