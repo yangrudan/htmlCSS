@@ -26,4 +26,4 @@ def get_process():
 
 while 1:
     get_process()
-    time.sleep(8)
+    time.sleep(1)
